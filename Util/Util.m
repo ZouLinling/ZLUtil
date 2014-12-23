@@ -8,14 +8,12 @@
 
 #import "Util.h"
 #include "netdb.h"
-#import "SystemConfiguration/SystemConfiguration.h"
-#import <CommonCrypto/CommonDigest.h>
-#import <MBProgressHUD.h>
 #import "NSObject+ClassName.h"
 #import "UIImage+UIImageFromUIColor.h"
-#import "AppDelegate.h"
-#import "MyTestAppDelegate.h"
+#import "SystemConfiguration/SystemConfiguration.h"
+#import <MBProgressHUD.h>
 #import  <CoreTelephony/CTCarrier.h>
+#import <CommonCrypto/CommonDigest.h>
 #import  <CoreTelephony/CTTelephonyNetworkInfo.h>
 
 @implementation Util
@@ -135,7 +133,7 @@
  **/
 + (void)makeToast:(NSString *)message
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:((AppDelegate*)[UIApplication sharedApplication].delegate).window animated:YES];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
     hud.mode = MBProgressHUDModeText;
     hud.labelText = message;
     hud.margin = 10.f;

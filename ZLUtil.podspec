@@ -3,7 +3,8 @@ Pod::Spec.new do |s|
   s.version      = "0.0.1"
   s.summary      = "ZLUtil provide common used function. For personal project use."
   s.homepage     = "https://github.com/ZouLinling/ZLUtil"
-  
+
+s.license      = "MIT"  
   s.author             = { "ZouLinling" => "stampmi@163.com" }
   
   s.source       = { :git => "https://github.com/ZouLinling/ZLUtil.git", :tag => "0.0.1" }
@@ -28,8 +29,8 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  # s.framework  = "SomeFramework"
-  s.frameworks = "CoreTelephony.framework"
+  s.framework  = "CoreTelephony"
+  #s.frameworks = "CoreTelephony"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
