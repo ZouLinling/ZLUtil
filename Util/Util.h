@@ -11,32 +11,42 @@
 
 enum {
     // iPhone 1,3,3GS 标准分辨率(320x480px)
-    UIDevice_iPhoneStandardRes      = 1,
+    UIDevice_iPhone         = 1,
     // iPhone 4,4S 高清分辨率(640x960px)
-    UIDevice_iPhoneHiRes            = 2,
+    UIDevice_iPhone4        = 2,
     // iPhone 5 高清分辨率(640x1136px)
-    UIDevice_iPhoneTallerHiRes      = 3,
+    UIDevice_iPhone5        = 3,
     // iPad 1,2 标准分辨率(1024x768px)
-    UIDevice_iPadStandardRes        = 4,
+    UIDevice_iPadStandard   = 4,
     // iPad 3 High Resolution(2048x1536px)
-    UIDevice_iPadHiRes              = 5
+    UIDevice_iPad3          = 5,
+    //1334×750
+    UIDevice_iPhone6        = 6,
+    //1920×1080
+    UIDevice_iPhone6P       = 7
+    
 }; typedef NSUInteger UIDeviceResolution;
 
 enum {
     
+    //中国电信
     Carrier_China_Telecom       = 1,
-
+    //中国移动
     Carrier_China_Mobile        = 2,
-
+    //中国联通
     Carrier_China_Unicom        = 3,
-
+    //其他
     Carrier_Unknow              = 4
 }; typedef NSUInteger CarrierType;
 
 @interface Util : NSObject
 
 
-//判断是否有网络
+/**
+ *  判断是否有网络
+ *  @deprecated 直接使用[[CloudClient sharedInstance] isReachable];
+ *  @return
+ */
 + (BOOL) isNetworkAvailable;
 
 //获取当前分辨率
@@ -48,18 +58,20 @@ enum {
 //是否是iPhone
 + (BOOL)isRunningOniPhone;
 
+//是否是iOS7.0以上
 + (BOOL)isiOS7Available;
 
+//是否是iOS8.0以上
 + (BOOL)iSiOS8Available;
 
 //获取String的MD5值，可以设定大写或小写
-+ (NSString *)getMD5StringFormString:(NSString *)string toUpCase:(BOOL) toUpCase;
++ (NSString *)MD5String:(NSString *)string whetherUpCase:(BOOL) toUpCase;
 
 //弹出消息提示，1.5秒后小时
 +(void)makeToast:(NSString *)message;
 
-//显示加载提示
-+(MBProgressHUD*) showProgressHud:(UIView *)parentView;
+////显示加载提示
++(MBProgressHUD*) showProgressHud;
 
 //获取当前时间格式化字符串
 + (NSString*)currentTimeString;
@@ -85,9 +97,6 @@ enum {
 //今天，2014-09-09 形式
 + (NSString*)today;
 
-//根据对象实例，获取格式化的JSON字符串，classInstance最好是NSObject的实例，支持嵌套解析
-+ (NSString *) getDicFromNormalClass:(id) classInstance;
-
 //求时间差
 + (NSString *) getTimeRelese:(NSString *)timenode;
 
@@ -109,11 +118,15 @@ enum {
 
 +(void)addBorderForView:(UIView*)view addLeft:(BOOL)left addRight:(BOOL)right addTop:(BOOL)top addBottom:(BOOL)bottom borderColor:(UIColor*)color;
 
+//整型转字符串
 +(NSString*)int2String:(int)intValue;
 
+//浮点型转字符串
 +(NSString*)float2String:(float)floatValue;
 
+//拼接字符串
 +(NSString*)combineString:(NSString*)string1 with:(NSString*)string2;
 
+//获取运营商信息
 +(CarrierType)carrier;
 @end

@@ -72,19 +72,36 @@
         if ([[UIScreen mainScreen] respondsToSelector: @selector(scale)]) {
             CGSize result = [[UIScreen mainScreen] bounds].size;
             result = CGSizeMake(result.width * [UIScreen mainScreen].scale, result.height * [UIScreen mainScreen].scale);
-            if (result.height <= 480.0f)
-                return UIDevice_iPhoneStandardRes;
-            return (result.height > 960 ? UIDevice_iPhoneTallerHiRes : UIDevice_iPhoneHiRes);
+            if (result.height <= 480.0f) {
+                return UIDevice_iPhone;
+            } else if ([self floatValue:result.height isEqualTo:960.0f]) {
+                return UIDevice_iPhone4;
+            } else if ([self floatValue:result.height isEqualTo:1136.0f]) {
+                return UIDevice_iPhone5;
+            } else if ([self floatValue:result.height isEqualTo:1334.0f]) {
+                return UIDevice_iPhone6;
+            } else if ([self floatValue:result.height isEqualTo:1980.0f]) {
+                return UIDevice_iPhone6P;
+            } else {
+                return UIDevice_iPhone4;
+            }
         } else
-            return UIDevice_iPhoneStandardRes;
+            return UIDevice_iPhone;
     } else
-        return (([[UIScreen mainScreen] respondsToSelector: @selector(scale)]) ? UIDevice_iPadHiRes : UIDevice_iPadStandardRes);
+        return (([[UIScreen mainScreen] respondsToSelector: @selector(scale)]) ? UIDevice_iPad3 : UIDevice_iPadStandard);
 }
 
++(BOOL)floatValue:(float)value1 isEqualTo:(float)value2 {
+    if (abs(value1 - value2) < 0.000001) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
 
 //当前是否运行在iPhone5端
 + (BOOL)isRunningOniPhone5{
-    if ([self currentResolution] == UIDevice_iPhoneTallerHiRes) {
+    if ([self currentResolution] == UIDevice_iPhone5) {
         return YES;
     }
     return NO;
@@ -109,15 +126,15 @@
  * 字符串MD5加密
  *
  **/
-+ (NSString *)getMD5StringFormString:(NSString *)string toUpCase:(BOOL) toUpCase
++ (NSString *)MD5String:(NSString *)string whetherUpCase:(BOOL) toUpCase
 {
     if (string == NULL) {
         return NULL;
     }
     const char *concat_str = [string UTF8String];
-	unsigned char result[CC_MD5_DIGEST_LENGTH];
-	CC_MD5(concat_str, strlen(concat_str), result);
-	NSMutableString *hash = [NSMutableString string];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(concat_str, strlen(concat_str), result);
+    NSMutableString *hash = [NSMutableString string];
     for (int i = 0; i < 16; i++)
         [hash appendFormat:@"%02X", result[i]];
     if (toUpCase) {
@@ -143,9 +160,9 @@
 }
 
 ////显示加载提示
-+(MBProgressHUD*) showProgressHud:(UIView *)parentView
++(MBProgressHUD*) showProgressHud
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:parentView animated:YES];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[[UIApplication sharedApplication].delegate window] animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.margin = 10.f;
     hud.yOffset = 0.0f;
