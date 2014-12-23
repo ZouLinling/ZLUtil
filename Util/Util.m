@@ -95,12 +95,12 @@
     return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone);
 }
 
-+ (BOOL)isRunningOniOS7
++ (BOOL)isiOS7Available
 {
     return ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0);
 }
 
-+ (BOOL)iSRunningOniOS8
++ (BOOL)iSiOS8Available
 {
     return ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0);
 }

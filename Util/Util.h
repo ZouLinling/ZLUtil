@@ -48,9 +48,9 @@ enum {
 //是否是iPhone
 + (BOOL)isRunningOniPhone;
 
-+ (BOOL)isRunningOniOS7;
++ (BOOL)isiOS7Available;
 
-+ (BOOL)iSRunningOniOS8;
++ (BOOL)iSiOS8Available;
 
 //获取String的MD5值，可以设定大写或小写
 + (NSString *)getMD5StringFormString:(NSString *)string toUpCase:(BOOL) toUpCase;
