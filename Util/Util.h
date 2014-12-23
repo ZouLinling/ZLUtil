@@ -109,5 +109,11 @@ enum {
 
 +(void)addBorderForView:(UIView*)view addLeft:(BOOL)left addRight:(BOOL)right addTop:(BOOL)top addBottom:(BOOL)bottom borderColor:(UIColor*)color;
 
++(NSString*)int2String:(int)intValue;
+
++(NSString*)float2String:(float)floatValue;
+
++(NSString*)combineString:(NSString*)string1 with:(NSString*)string2;
+
 +(CarrierType)carrier;
 @end

@@ -357,6 +357,22 @@
         [view.layer addSublayer:rightSideBorder];
     }
 }
+
++(NSString*)int2String:(int)intValue
+{
+    return [NSString stringWithFormat:@"%d",intValue];
+}
+
++(NSString*)float2String:(float)floatValue
+{
+    return [NSString stringWithFormat:@"%f",floatValue];
+}
+
++(NSString*)combineString:(NSString*)string1 with:(NSString*)string2
+{
+    return [NSString stringWithFormat:@"%@%@",string1,string2];
+}
+
 +(CarrierType)carrier
 {
     CTCarrier *carrier = [[[CTTelephonyNetworkInfo alloc] init] subscriberCellularProvider];
