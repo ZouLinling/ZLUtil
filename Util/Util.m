@@ -259,35 +259,9 @@
 {
     NSDateFormatter *Formatter = [[NSDateFormatter alloc] init];
     [Formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-  NSDate *d=[Formatter dateFromString:timenode];
-    NSTimeInterval time= [d timeIntervalSinceNow]*1;
+    NSDate *d=[Formatter dateFromString:timenode];
     NSString *timeString;
-//    if (time/3600<1) {
-//        timeString = [NSString stringWithFormat:@"%f", time/60];
-//        timeString = [timeString substringToIndex:timeString.length-7];
-//        timeString=[NSString stringWithFormat:@"%@分钟结束", timeString];
-//        
-//    }
-//    if (time/3600>1&&time/86400<1) {
-//        //        timeString = [NSString stringWithFormat:@"%f", cha/3600];
-//        //        timeString = [timeString substringToIndex:timeString.length-7];
-//        //        timeString=[NSString stringWithFormat:@"%@小时前", timeString];
-//        NSDateFormatter *dateformatter=[[NSDateFormatter alloc] init];
-//        [dateformatter setDateFormat:@"HH:mm"];
-//        timeString = [NSString stringWithFormat:@"今天 %@结束",[dateformatter stringFromDate:d]];
-//       
-//    }
-//    if (time/86400>1)
-//    {
-//        //        timeString = [NSString stringWithFormat:@"%f", cha/86400];
-//        //        timeString = [timeString substringToIndex:timeString.length-7];
-//        //        timeString=[NSString stringWithFormat:@"%@天前", timeString];
-//        NSDateFormatter *dateformatter=[[NSDateFormatter alloc] init];
-//        [dateformatter setDateFormat:@"YY-MM-dd HH:mm"];
-//        timeString = [NSString stringWithFormat:@"%@后结束",[dateformatter stringFromDate:d]];
-//        
-//    }
-   NSCalendar *cal = [NSCalendar currentCalendar];
+    NSCalendar *cal = [NSCalendar currentCalendar];
     unsigned int unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ;
     
     NSDateComponents *de = [cal components:unitFlags fromDate:[NSDate date] toDate:d options:0 ];
