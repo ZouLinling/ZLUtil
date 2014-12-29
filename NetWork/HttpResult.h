@@ -1,6 +1,6 @@
 //
 //  HttpResult.h
-//  B2C
+//  ZLUtil
 //
 //  Created by Zou on 12/25/14.
 //  Copyright (c) 2014 Zou. All rights reserved.
@@ -24,6 +24,8 @@
 
 #define HTTP_STATUS_CODE_EXCEPTION @"99"
 #define HTTP_STATUS_MESAAGE_EXCEPTION @"系统异常，请联系服务商..."
+
+#define HTTP_RESULT_ERROR_DICTIONARY_KEY @"ErrorMessage"
 
 @property (nonatomic,strong) NSString *code;
 @property (nonatomic,strong) NSString *message;

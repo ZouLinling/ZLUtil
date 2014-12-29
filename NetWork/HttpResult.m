@@ -1,6 +1,6 @@
 //
 //  HttpResult.m
-//  B2C
+//  ZLUtil
 //
 //  Created by Zou on 12/25/14.
 //  Copyright (c) 2014 Zou. All rights reserved.

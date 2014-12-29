@@ -1,6 +1,6 @@
 //
 //  HttpHelper.h
-//  BaseProject
+//  ZLUtil
 //  服务端使用HttpServlet来提供数据服务，通用情况下，根据本类中提供的数据进行查询
 //  或者反射执行具体的方法。
 //  数据传输使用是xml，本类实现服务端所需的固定格式的xml
