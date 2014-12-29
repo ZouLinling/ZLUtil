@@ -7,13 +7,13 @@
 //
 
 #import "HttpClient.h"
-#import "XMLHelper.h"
+#import "RequestHelper.h"
 #import "HttpResult.h"
 #import "Util.h"
 
 @implementation HttpClient
 
-+(void)request:(XMLHelper*)params completionBlock:(HttpResultBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;
++(void)request:(RequestHelper*)params completionBlock:(HttpResultBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     //注意：默认情况下AFNetWorking无法解析返回的response中content-type是text/xml的数据，这里使用别AFXMLParserResponseSerializer来代替默认的responseSerializer，这样就直接返回未经处理的数据

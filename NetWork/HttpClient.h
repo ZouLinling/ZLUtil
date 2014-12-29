@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
 #import "ZLBlocks.h"
-@class XMLHelper;
+@class RequestHelper;
 @class HttpResult;
 
 #define HOST   @"http://192.168.2.1:8080/dyshop/rmi"
@@ -18,6 +18,6 @@
 
 @property (nonatomic, strong) NSString *host;
 
-+(void)request:(XMLHelper*)params completionBlock:(HttpResultBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;
++(void)request:(RequestHelper*)params completionBlock:(HttpResultBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;
 
 @end

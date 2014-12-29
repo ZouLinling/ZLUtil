@@ -8,7 +8,7 @@
 
 #import "HttpResult.h"
 #import "GDataXMLNode.h"
-#import "XMLHelper.h"
+#import "RequestHelper.h"
 
 @implementation HttpResult
 

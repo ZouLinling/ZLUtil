@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface XMLHelper : NSObject
+@interface RequestHelper : NSObject
 
 #define BUFFSIZE 4096
 
