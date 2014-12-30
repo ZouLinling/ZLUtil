@@ -10,6 +10,9 @@
 
 @interface HttpResult : NSObject
 
+#define RESULT_SUCCESS @"success"
+#define RESULT_FAIL @"fail"
+
 #define RESULT_CODE @"code"
 #define RESULT_MESSAAGE @"msg"
 
