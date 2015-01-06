@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
 #import "ZLBlocks.h"
-@class RequestHelper;
-@class HttpResult;
+#import "RequestHelper.h"
+#import "HttpResult.h"
+#import "SQLBuilder.h"
+#import "HttpResult.h"
 
 #define HOST   @"http://192.168.2.1:8080/dyshop/rmi"
 

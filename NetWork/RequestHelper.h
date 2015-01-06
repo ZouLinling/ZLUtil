@@ -12,6 +12,10 @@
 
 @interface RequestHelper : NSObject
 
+#define METHOD_QUERY @"Q"
+
+#define METHOD_EXECUTE @"E"
+
 #define BUFFSIZE 4096
 
 #define HTTP_CHARSET @"UTF-8"
@@ -38,15 +42,17 @@
 
 #define XML_NODE_RESULT @"result"
 
+#define DEFAULT_PAGESIZE 15
+
 @property (nonatomic,strong) NSString *method;
 @property (nonatomic,strong) NSString *classPath;
 @property (nonatomic,strong) NSString *methodName;
 @property (nonatomic,strong) NSString *sql;
 @property (nonatomic,strong) NSMutableDictionary *kvData;
 @property (nonatomic,strong) NSMutableArray *dataset; //data的集合，实际也是key-value的集合
-@property int pageSize;
-@property int pageIndex;
-@property int itemCount;
+@property int pageSize; //客户端不用设置，统一设置为DEFAULT_PAGESIZE
+@property int pageIndex; //当前页码，从1开始
+@property int itemCount; //第一次调用使用0，后面使用服务器返回数据
 @property BOOL pagination;
 
 -(NSString*)buildXml;

@@ -29,7 +29,7 @@
         if ([result.code isEqual:HTTP_STATUS_CODE_SUCCESS]) {
             resultBlcok(result);
         } else {
-            if (result.message != nil || ![result.message isEqualToString:@""]) {
+            if (result.message != nil && ![result.message isEqualToString:@""]) {
                 [Util makeToast:result.message];
                 NSError *error = [[NSError alloc] initWithDomain:HOST code:[result.code integerValue] userInfo:@{HTTP_RESULT_ERROR_DICTIONARY_KEY:result.message}];
                 errorBlock(error);

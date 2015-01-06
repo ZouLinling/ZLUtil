@@ -16,3 +16,5 @@ typedef void (^ArrayBlock)(NSArray* array);
 typedef void (^ErrorBlock)(NSError* error);
 
 typedef void (^HttpResultBlock)(HttpResult* result);
+
+typedef void (^BoolResult)(BOOL result);

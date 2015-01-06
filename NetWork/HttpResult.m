@@ -9,6 +9,7 @@
 #import "HttpResult.h"
 #import "GDataXMLNode.h"
 #import "RequestHelper.h"
+#import "NSString+URL.h"
 
 @implementation HttpResult
 
@@ -51,7 +52,4 @@
     }
     return result;
 }
-
-
-
 @end
