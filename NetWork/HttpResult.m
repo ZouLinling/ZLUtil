@@ -10,13 +10,22 @@
 #import "GDataXMLNode.h"
 #import "RequestHelper.h"
 #import "NSString+URL.h"
+#import "HttpClient.h"
+#import "NSData+Compressor.h"
+#import "ZLGTMBase64.h"
 
 @implementation HttpResult
 
 +(HttpResult*)parseResult:(NSString*)xmlResult
 {
     HttpResult *result = [self alloc];
-    NSData *xmlData = [xmlResult dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *resultData = [xmlResult dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *xmlData;
+    if (NEED_ENCRYPT) {
+        xmlData = [[ZLGTMBase64 decodeData:resultData] uncompressZippedData];
+    } else {
+        xmlData = resultData;
+    }
     NSError *error;
     GDataXMLDocument *xmlDocument = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
     NSArray *elements = [[xmlDocument rootElement] children];

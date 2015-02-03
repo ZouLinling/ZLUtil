@@ -12,9 +12,10 @@
 #import "RequestHelper.h"
 #import "HttpResult.h"
 #import "SQLBuilder.h"
-#import "HttpResult.h"
+#import "HttpResult.h" 
+#import "Constant.h"
 
-#define HOST   @"http://192.168.2.1:8080/dyshop/rmi"
+#define NEED_ENCRYPT YES
 
 @interface HttpClient : NSObject
 
