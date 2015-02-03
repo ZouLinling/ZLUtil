@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Zou. All rights reserved.
 //
 
-#import "RequestHelper.h"
+#import "RequestXMLBuilder.h"
 #import "GDataXMLNode.h"
 
-@implementation RequestHelper
+@implementation RequestXMLBuilder
 
 /*************XML Pattern*************/
 //<?xml version="1.0" encoding="UTF-8"?>
@@ -39,11 +39,11 @@
     
     GDataXMLElement *sqlElement = [GDataXMLElement elementWithName:XML_NODE_SQL stringValue:_sql];
     //服务端解析attribute并不是根据属性名字来解析的，而是根据顺序，所以这里的name都可以不是固定的，但是顺序不能修改
-    GDataXMLNode *attribute1 = [GDataXMLNode elementWithName:@"pageSize" stringValue:[RequestHelper int2String:_pageSize]];
+    GDataXMLNode *attribute1 = [GDataXMLNode elementWithName:@"pageSize" stringValue:[RequestXMLBuilder int2String:_pageSize]];
     [sqlElement addAttribute:attribute1];
-    GDataXMLNode *attribute2 = [GDataXMLNode elementWithName:@"pageIndex" stringValue:[RequestHelper int2String:_pageIndex]];
+    GDataXMLNode *attribute2 = [GDataXMLNode elementWithName:@"pageIndex" stringValue:[RequestXMLBuilder int2String:_pageIndex]];
     [sqlElement addAttribute:attribute2];
-    GDataXMLNode *attribute3 = [GDataXMLNode elementWithName:@"itemCount" stringValue:[RequestHelper int2String:_itemCount]];
+    GDataXMLNode *attribute3 = [GDataXMLNode elementWithName:@"itemCount" stringValue:[RequestXMLBuilder int2String:_itemCount]];
     [sqlElement addAttribute:attribute3];
     GDataXMLNode *attribute4 = [GDataXMLNode elementWithName:@"pagination" stringValue:_pagination == YES?@"true":@"false"];
     [sqlElement addAttribute:attribute4];

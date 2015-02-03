@@ -1,5 +1,5 @@
 //
-//  HttpHelper.h
+//  RequestXMLBuilder.h
 //  ZLUtil
 //  服务端使用HttpServlet来提供数据服务，通用情况下，根据本类中提供的数据进行查询
 //  或者反射执行具体的方法。
@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RequestHelper : NSObject
+@interface RequestXMLBuilder : NSObject
 
 #define METHOD_QUERY @"Q"
 

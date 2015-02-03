@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
 #import "ZLBlocks.h"
-#import "RequestHelper.h"
+#import "RequestXMLBuilder.h"
 #import "HttpResult.h"
 #import "SQLBuilder.h"
 #import "HttpResult.h" 
@@ -21,6 +21,6 @@
 
 @property (nonatomic, strong) NSString *host;
 
-+(void)request:(RequestHelper*)params completionBlock:(HttpResultBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;
++(void)request:(RequestXMLBuilder*)params completionBlock:(HttpResultBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;
 
 @end

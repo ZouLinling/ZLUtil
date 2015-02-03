@@ -8,7 +8,7 @@
 
 #import "HttpResult.h"
 #import "GDataXMLNode.h"
-#import "RequestHelper.h"
+#import "RequestXMLBuilder.h"
 #import "NSString+URL.h"
 #import "HttpClient.h"
 #import "NSData+Compressor.h"
