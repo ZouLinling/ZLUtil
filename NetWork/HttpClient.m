@@ -32,6 +32,7 @@
     }
     [request setHTTPMethod:@"POST"];
     [request setValue:HTTP_CONTENT_TYPE forHTTPHeaderField:@"Content-Type"];
+    [request setTimeoutInterval:10];
     
     NSOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         HttpResult *result = [HttpResult parseResult:[operation responseString]];

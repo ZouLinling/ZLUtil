@@ -28,7 +28,6 @@
 -(NSString*)buildXml
 {
     GDataXMLElement *rootElement = [GDataXMLNode elementWithName:XML_NODE_ROOT];
-    
     GDataXMLElement *methodElement = [GDataXMLNode elementWithName:XML_NODE_METHOD];
     GDataXMLNode *actionAttribute = [GDataXMLNode elementWithName:@"action" stringValue:_method];
     [methodElement addAttribute:actionAttribute];

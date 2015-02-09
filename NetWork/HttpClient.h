@@ -15,7 +15,7 @@
 #import "HttpResult.h" 
 #import "Constant.h"
 
-#define NEED_ENCRYPT YES
+#define NEED_ENCRYPT NO
 
 @interface HttpClient : NSObject
 
