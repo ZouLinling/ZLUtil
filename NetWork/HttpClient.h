@@ -21,6 +21,10 @@
 
 @property (nonatomic, strong) NSString *host;
 
+#ifdef USE_JSON
++(void)request:(RequestXMLBuilder*)params completionBlock:(StringBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;
+#else
 +(void)request:(RequestXMLBuilder*)params completionBlock:(HttpResultBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;
+#endif
 
 @end

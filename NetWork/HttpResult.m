@@ -13,6 +13,7 @@
 #import "HttpClient.h"
 #import "NSData+Compressor.h"
 #import "ZLGTMBase64.h"
+#import "JSONKit.h"
 
 @implementation HttpResult
 
@@ -30,6 +31,32 @@
     GDataXMLDocument *xmlDocument = [[GDataXMLDocument alloc] initWithData:xmlData options:0 error:&error];
     NSArray *elements = [[xmlDocument rootElement] children];
     for (GDataXMLElement *element in elements) {
+#ifdef USE_JSON
+        if ([[element name] isEqualToString:XML_NODE_KVDATA]) {
+            //EXAMPLE:<kvdata response="JSON"/>
+            //JSON 示例
+            //{"error_code":"0","result":{"user_id":"1234","user_name":"ljn"}}
+            //{"error_code":"101","result":"密码错误"}
+            NSArray *attributes = [element attributes];
+            //按照与接口方的协议，这里attributes中有且只有一个元素response
+            result.kvdata = [[NSMutableDictionary alloc] init];
+            NSString *response;
+            for (GDataXMLNode *node in attributes) {
+                response = [node stringValue];
+                break;
+            }
+            if (response) {
+                NSDictionary *dict = [response objectFromJSONString];
+                result.code = [dict objectForKey:ERROR_CODE];
+                if ([result.code isEqualToString:RESULT_SUCCESS_CODE]) {
+                    result.jsonResult = [dict objectForKey:RESULT];
+                } else {
+                    result.jsonResult = nil;
+                    result.message = [dict objectForKey:RESULT];
+                }
+            }
+        }
+#else
         if ([[element name] isEqualToString:XML_NODE_RESULT]) {
             //EXAMPlE:<Result code = "00" message="操作失败，请重试..."/>
             result.code = [[element attributeForName:RESULT_CODE] stringValue];
@@ -58,6 +85,8 @@
                 [result.dataset addObject:dict];
             }
         }
+#endif
+        
     }
     return result;
 }

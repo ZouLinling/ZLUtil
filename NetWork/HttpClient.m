@@ -8,12 +8,53 @@
 
 #import "HttpClient.h"
 #import "RequestXMLBuilder.h"
-#import "HttpResult.h"
 #import "Util.h"
 #import "NSData+Compressor.h"
 #import "ZLGTMBase64.h"
 
 @implementation HttpClient
+
+#ifdef USE_JSON
++(void)request:(RequestXMLBuilder*)params completionBlock:(StringBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //注意：默认情况下AFNetWorking无法解析返回的response中content-type是text/xml的数据，这里使用别AFXMLParserResponseSerializer来代替默认的responseSerializer，这样就直接返回未经处理的数据
+    manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:HOST]];
+    NSData *data = [[params buildXml] dataUsingEncoding:NSUTF8StringEncoding];
+    if (NEED_ENCRYPT) {
+        NSData *compressedData = [data gzipData];
+        [request setHTTPBody:[ZLGTMBase64 encodeData:compressedData]];
+    } else {
+        [request setHTTPBody:data];
+    }
+    [request setHTTPMethod:@"POST"];
+    [request setValue:HTTP_CONTENT_TYPE forHTTPHeaderField:@"Content-Type"];
+    [request setTimeoutInterval:10];
+    
+    NSOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        HttpResult *result = [HttpResult parseResult:[operation responseString]];
+        if (result.jsonResult) {
+            //有返回值
+            resultBlcok(result.jsonResult);
+        } else {
+            //错误信息
+            [Util makeToast:result.message];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        // handle network related errors here
+        if (error.localizedFailureReason != nil) {
+            [Util makeToast:error.localizedFailureReason];
+        } else {
+            [Util makeToast:@"网络请求错误，请稍后再试"];
+        }
+        errorBlock(error);
+    }];
+    [manager.operationQueue addOperation:operation];
+}
+#else
 
 +(void)request:(RequestXMLBuilder*)params completionBlock:(HttpResultBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;
 {
@@ -60,5 +101,6 @@
     }];
     [manager.operationQueue addOperation:operation];
 }
+#endif
 
 @end
