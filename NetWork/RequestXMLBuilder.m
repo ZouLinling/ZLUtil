@@ -29,7 +29,7 @@
 {
     GDataXMLElement *rootElement = [GDataXMLNode elementWithName:XML_NODE_ROOT];
     GDataXMLElement *methodElement = [GDataXMLNode elementWithName:XML_NODE_METHOD];
-    GDataXMLNode *actionAttribute = [GDataXMLNode elementWithName:@"action" stringValue:_method];
+    GDataXMLNode *actionAttribute = [GDataXMLNode elementWithName:@"action" stringValue:_method==nil?METHOD_EXECUTE:_method];
     [methodElement addAttribute:actionAttribute];
     
     [methodElement addChild:[GDataXMLNode elementWithName:XML_NODE_CLASSPATH stringValue:_classPath]];

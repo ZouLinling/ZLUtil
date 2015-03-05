@@ -10,7 +10,8 @@
 
 @interface HttpResult : NSObject
 
-
+#define RESULT_SUCCESS @"success"
+#define RESULT_FAIL @"fail"
 
 @property (nonatomic,strong) NSString *code;
 @property (nonatomic,strong) NSString *message;
@@ -34,8 +35,6 @@
 
 @property (nonatomic,strong) NSMutableDictionary *kvdata;
 @property (nonatomic,strong) NSMutableArray *dataset;
-#define RESULT_SUCCESS @"success"
-#define RESULT_FAIL @"fail"
 #define RESULT_CODE @"code"
 #define RESULT_MESSAAGE @"msg"
 #define HTTP_STATUS_CODE_FAIL @"00"

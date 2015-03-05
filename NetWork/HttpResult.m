@@ -39,7 +39,6 @@
             //{"error_code":"101","result":"密码错误"}
             NSArray *attributes = [element attributes];
             //按照与接口方的协议，这里attributes中有且只有一个元素response
-            result.kvdata = [[NSMutableDictionary alloc] init];
             NSString *response;
             for (GDataXMLNode *node in attributes) {
                 response = [node stringValue];

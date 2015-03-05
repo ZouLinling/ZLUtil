@@ -42,6 +42,7 @@
         } else {
             //错误信息
             [Util makeToast:result.message];
+            errorBlock(nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         // handle network related errors here

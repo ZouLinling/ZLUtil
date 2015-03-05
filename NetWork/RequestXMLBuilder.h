@@ -44,7 +44,7 @@
 
 #define DEFAULT_PAGESIZE 15
 
-@property (nonatomic,strong) NSString *method;
+@property (nonatomic,strong) NSString *method; //默认 METHOD_EXECUTE
 @property (nonatomic,strong) NSString *classPath;
 @property (nonatomic,strong) NSString *methodName;
 @property (nonatomic,strong) NSString *sql;
