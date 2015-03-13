@@ -48,9 +48,9 @@
                 NSDictionary *dict = [response objectFromJSONString];
                 result.code = [dict objectForKey:ERROR_CODE];
                 if ([result.code isEqualToString:RESULT_SUCCESS_CODE]) {
-                    result.jsonResult = [dict objectForKey:RESULT];
+                    result.jsonDict = [dict objectForKey:RESULT];
                 } else {
-                    result.jsonResult = nil;
+                    result.jsonDict = nil;
                     result.message = [dict objectForKey:RESULT];
                 }
             }

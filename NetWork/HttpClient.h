@@ -15,14 +15,21 @@
 #import "HttpResult.h" 
 #import "Constant.h"
 
-#define NEED_ENCRYPT NO
+#define NEED_ENCRYPT YES
 
 @interface HttpClient : NSObject
 
 @property (nonatomic, strong) NSString *host;
 
 #ifdef USE_JSON
-+(void)request:(RequestXMLBuilder*)params completionBlock:(StringBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;
+/**
+ *
+ *
+ *  @param params
+ *  @param resultBlcok 两种情况的返回值，一种是NSDictionary，另一种是NSArray（值是N个NSDictionary）
+ *  @param errorBlock
+ */
++(void)request:(RequestXMLBuilder*)params completionBlock:(ObjectBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;
 #else
 +(void)request:(RequestXMLBuilder*)params completionBlock:(HttpResultBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;
 #endif

@@ -394,4 +394,20 @@
         return Carrier_Unknow;
     }
 }
+
++(void)strikethroughLabel:(UILabel *)label withText:(NSString *)text
+{
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:text];
+    [attrString addAttribute:NSStrikethroughStyleAttributeName value:@(NSUnderlineStyleSingle | NSUnderlinePatternSolid) range:[text rangeOfString:text]];
+    [label setAttributedText:attrString];
+}
+
++(void)deleteBackTitle:(UINavigationItem *)navigationItem
+{
+    UIBarButtonItem *myBackBarButtonItem = [[UIBarButtonItem alloc]
+                                            init];
+    myBackBarButtonItem.title = @"";
+    myBackBarButtonItem.image = [myBackBarButtonItem.image imageWithRenderingMode:UIImageRenderingModeAutomatic];
+    navigationItem.backBarButtonItem = myBackBarButtonItem;
+}
 @end

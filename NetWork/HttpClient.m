@@ -15,7 +15,7 @@
 @implementation HttpClient
 
 #ifdef USE_JSON
-+(void)request:(RequestXMLBuilder*)params completionBlock:(StringBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock
++(void)request:(RequestXMLBuilder*)params completionBlock:(ObjectBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     //注意：默认情况下AFNetWorking无法解析返回的response中content-type是text/xml的数据，这里使用别AFXMLParserResponseSerializer来代替默认的responseSerializer，这样就直接返回未经处理的数据
@@ -36,9 +36,9 @@
     
     NSOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         HttpResult *result = [HttpResult parseResult:[operation responseString]];
-        if (result.jsonResult) {
+        if (result.jsonDict) {
             //有返回值
-            resultBlcok(result.jsonResult);
+            resultBlcok(result.jsonDict);
         } else {
             //错误信息
             [Util makeToast:result.message];

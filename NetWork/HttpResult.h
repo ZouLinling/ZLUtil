@@ -26,7 +26,7 @@
 
 #ifdef USE_JSON
 
-@property (nonatomic,strong) NSString *jsonResult; //JSON格式的返回值
+@property (nonatomic,strong) NSDictionary *jsonDict; //JSON格式的返回值
 #define ERROR_CODE @"error_code"
 #define RESULT @"result"
 #define RESULT_SUCCESS_CODE @"0"

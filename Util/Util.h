@@ -129,4 +129,13 @@ enum {
 
 //获取运营商信息
 +(CarrierType)carrier;
+
++(void)strikethroughLabel:(UILabel*)label withText:(NSString*)text;
+
+/**
+ *  删除返回按钮边上的文字,注意，这是删除下一个页面的返回按钮的文字，对当前页面无效
+ *
+ *  @param navigationItem
+ */
++(void)deleteBackTitle:(UINavigationItem*)navigationItem;
 @end
