@@ -45,8 +45,7 @@
             errorBlock(nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        // handle network related errors here
-        if (error.localizedFailureReason != nil) {
+        if (error.localizedDescription != nil) {
             [Util makeToast:error.localizedFailureReason];
         } else {
             [Util makeToast:@"网络请求错误，请稍后再试"];
