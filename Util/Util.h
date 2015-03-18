@@ -7,6 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UIColor+UIColorFromHex.h"
+#import "UIImage+UIRoundedRectImage.h"
+#import "UIImage+UIImageFromUIColor.h"
+#import "Constant.h"
 @class MBProgressHUD;
 
 enum {
@@ -138,4 +142,16 @@ enum {
  *  @param navigationItem
  */
 +(void)deleteBackTitle:(UINavigationItem*)navigationItem;
+
+/**
+ *  自定义圆角button的背景色
+ *
+ *  @param button
+ *  @param enabledColor      button启用时的颜色 16进制
+ *  @param disabledColor     button禁用时的颜色 16进制
+ *  @param hasFilletedCorner 是否需要圆角
+ */
++(void)customButton:(UIButton*)button enabledColor:(NSInteger)enabledColor disabledColor:(NSInteger)disabledColor whetherFilletedCorner:(BOOL)hasFilletedCorner;
+
+
 @end

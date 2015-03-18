@@ -410,4 +410,26 @@
     myBackBarButtonItem.image = [myBackBarButtonItem.image imageWithRenderingMode:UIImageRenderingModeAutomatic];
     navigationItem.backBarButtonItem = myBackBarButtonItem;
 }
+
++(void)customButton:(UIButton*)button enabledColor:(NSInteger)enabledColor disabledColor:(NSInteger)disabledColor whetherFilletedCorner:(BOOL)hasFilletedCorner
+{
+    //从颜色构建图片
+    UIImage *normalBackgroundImage = [UIImage initImageWithUIColor:[UIColor colorWithHex:enabledColor]];
+    if (hasFilletedCorner) {
+        //图片设置圆角
+        normalBackgroundImage = [normalBackgroundImage createRoundedRectImage:normalBackgroundImage size:button.frame.size];
+    }
+    
+    //设置背景
+    [button setBackgroundImage:normalBackgroundImage forState:UIControlStateNormal];
+    
+    //从颜色构建图片
+    UIImage *disabledBackgroundImage = [UIImage initImageWithUIColor:[UIColor colorWithHex:disabledColor]];
+    if (hasFilletedCorner) {
+        //图片设置圆角
+        disabledBackgroundImage = [disabledBackgroundImage createRoundedRectImage:disabledBackgroundImage size:button.frame.size];
+    }
+    //设置背景
+    [button setBackgroundImage:disabledBackgroundImage forState:UIControlStateDisabled];
+}
 @end
