@@ -349,6 +349,12 @@
     }
 }
 
+//bool转字符串
++(NSString*)bool2String:(BOOL)boolValue
+{
+    return boolValue?@"1":@"0";
+}
+
 +(NSString*)int2String:(int)intValue
 {
     return [NSString stringWithFormat:@"%d",intValue];

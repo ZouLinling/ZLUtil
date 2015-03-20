@@ -122,6 +122,9 @@ enum {
 
 +(void)addBorderForView:(UIView*)view addLeft:(BOOL)left addRight:(BOOL)right addTop:(BOOL)top addBottom:(BOOL)bottom borderColor:(UIColor*)color;
 
+//bool转字符串
++(NSString*)bool2String:(BOOL)boolValue;
+
 //整型转字符串
 +(NSString*)int2String:(int)intValue;
 

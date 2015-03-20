@@ -16,6 +16,7 @@
 #import "Constant.h"
 
 #define NEED_ENCRYPT YES
+#define BOOL_RESULT_SUCCESS @"SUCCESS"
 
 @interface HttpClient : NSObject
 
