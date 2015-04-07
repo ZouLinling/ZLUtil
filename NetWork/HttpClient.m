@@ -46,7 +46,7 @@
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (error.localizedDescription != nil) {
-            [Util makeToast:error.localizedFailureReason];
+            [Util makeToast:error.localizedDescription];
         } else {
             [Util makeToast:@"网络请求错误，请稍后再试"];
         }

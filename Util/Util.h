@@ -156,5 +156,11 @@ enum {
  */
 +(void)customButton:(UIButton*)button enabledColor:(NSInteger)enabledColor disabledColor:(NSInteger)disabledColor whetherFilletedCorner:(BOOL)hasFilletedCorner;
 
+/**
+ *  隐藏tableview的横线（无数据）
+ *
+ *  @param tableView 
+ */
++ (void)setExtraCellLineHidden: (UITableView *)tableView;
 
 @end
