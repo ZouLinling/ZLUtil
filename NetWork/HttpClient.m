@@ -103,4 +103,9 @@
 }
 #endif
 
++(void)cancelRequest
+{
+    
+}
+
 @end

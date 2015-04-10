@@ -35,4 +35,6 @@
 +(void)request:(RequestXMLBuilder*)params completionBlock:(HttpResultBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;
 #endif
 
++(void)cancelRequest;
+
 @end
