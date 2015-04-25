@@ -167,6 +167,7 @@
     hud.margin = 10.f;
     hud.yOffset = 0.0f;
     hud.removeFromSuperViewOnHide = YES;
+    [hud hide:YES afterDelay:10];//10秒之后自动消失
     return hud;
 }
 
@@ -362,7 +363,7 @@
 
 +(NSString*)float2String:(float)floatValue
 {
-    return [NSString stringWithFormat:@"%f",floatValue];
+    return [NSString stringWithFormat:@"%.2f",floatValue];
 }
 
 +(NSString*)combineString:(NSString*)string1 with:(NSString*)string2
