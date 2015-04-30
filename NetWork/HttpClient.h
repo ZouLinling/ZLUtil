@@ -27,7 +27,8 @@
  *
  *
  *  @param params
- *  @param resultBlcok 两种情况的返回值，一种是NSDictionary，另一种是NSArray（值是N个NSDictionary）
+ *  @param resultBlcok 三种情况的返回值，一种是NSDictionary，另一种是NSArray（值是N个NSDictionary）
+ *                     第三种情况是NSString，bool类型或者是提示信息
  *  @param errorBlock
  */
 +(void)request:(RequestXMLBuilder*)params completionBlock:(ObjectBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;

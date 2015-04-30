@@ -159,6 +159,21 @@
     [hud hide:YES afterDelay:1.5];
 }
 
++(void)showSuccess
+{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.labelText = @"SUCCESS";
+    hud.margin = 10.f;
+    hud.alpha = 0.7;
+    hud.yOffset = 150.f;
+    hud.removeFromSuperViewOnHide = YES;
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 37, 37)];
+    imageView.image = [UIImage imageNamed:@"gou"];
+    hud.customView = imageView;
+    [hud hide:YES afterDelay:1.5];
+}
+
 ////显示加载提示
 +(MBProgressHUD*) showProgressHud
 {

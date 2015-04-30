@@ -41,7 +41,12 @@
             resultBlcok(result.jsonDict);
         } else {
             //错误信息
-            [Util makeToast:result.message];
+            if (result.message) {
+                [Util makeToast:result.message];
+            } else {
+                [Util makeToast:@"99系统错误"];
+            }
+            
             errorBlock(nil);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

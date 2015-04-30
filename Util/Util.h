@@ -71,6 +71,13 @@ enum {
 //获取String的MD5值，可以设定大写或小写
 + (NSString *)MD5String:(NSString *)string whetherUpCase:(BOOL) toUpCase;
 
+/**
+ *  成功提示
+ *
+ *  @param message
+ */
++(void)showSuccess;
+
 //弹出消息提示，1.5秒后小时
 +(void)makeToast:(NSString *)message;
 
