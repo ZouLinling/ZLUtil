@@ -32,6 +32,9 @@
  *  @param errorBlock
  */
 +(void)request:(RequestXMLBuilder*)params completionBlock:(ObjectBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;
+
+//上传文件用
++(void)requestWithFile:(RequestXMLBuilder*)params file:(NSString*)filePath completionBlock:(ObjectBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;
 #else
 +(void)request:(RequestXMLBuilder*)params completionBlock:(HttpResultBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock;
 #endif
