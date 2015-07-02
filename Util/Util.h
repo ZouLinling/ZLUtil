@@ -11,6 +11,8 @@
 #import "UIImage+UIRoundedRectImage.h"
 #import "UIImage+UIImageFromUIColor.h"
 #import "Constant.h"
+#import "UINavigationBar+Customize.h"
+#import "UIImage+CircleImage.h"
 @class MBProgressHUD;
 
 enum {
