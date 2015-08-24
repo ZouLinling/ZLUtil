@@ -16,14 +16,14 @@
 @implementation HttpClient
 
 #ifdef USE_JSON
-+(void)request:(RequestXMLBuilder*)params completionBlock:(ObjectBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock
++(void)request:(RequestXMLBuilder*)params completionBlock:(ObjectBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock host:(NSString*) host
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     //注意：默认情况下AFNetWorking无法解析返回的response中content-type是text/xml的数据，这里使用别AFXMLParserResponseSerializer来代替默认的responseSerializer，这样就直接返回未经处理的数据
     manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:HOST]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:host]];
     NSData *data = [[params buildXml] dataUsingEncoding:NSUTF8StringEncoding];
     if (NEED_ENCRYPT) {
         NSData *compressedData = [data gzipData];
@@ -62,14 +62,14 @@
 }
 
 //上传文件用
-+(void)requestWithFile:(RequestXMLBuilder*)params file:(NSString*)filePath completionBlock:(ObjectBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock
++(void)requestWithFile:(RequestXMLBuilder*)params file:(NSString*)filePath completionBlock:(ObjectBlock)resultBlcok errorBlock:(ErrorBlock)errorBlock host:(NSString*)host
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     //注意：默认情况下AFNetWorking无法解析返回的response中content-type是text/xml的数据，这里使用别AFXMLParserResponseSerializer来代替默认的responseSerializer，这样就直接返回未经处理的数据
     manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
-    NSMutableURLRequest *request = [manager.requestSerializer multipartFormRequestWithMethod:@"POST" URLString:HOST parameters:nil constructingBodyWithBlock: ^(id<AFMultipartFormData> formData) {
+    NSMutableURLRequest *request = [manager.requestSerializer multipartFormRequestWithMethod:@"POST" URLString:host parameters:nil constructingBodyWithBlock: ^(id<AFMultipartFormData> formData) {
         [formData appendPartWithFileURL:[NSURL URLWithString:filePath] name:@"RECORD_NAME" error:nil];
     } error:nil];
     

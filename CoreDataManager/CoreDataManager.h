@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 @class NSManagedObject;
+@class NSManagedObjectModel;
+@class NSManagedObjectContext;
+@class NSPersistentStoreCoordinator;
 
 @interface CoreDataManager : NSObject
 @property(strong,nonatomic,readonly)NSManagedObjectModel* managedObjectModel;

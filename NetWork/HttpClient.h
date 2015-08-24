@@ -11,9 +11,7 @@
 #import "ZLBlocks.h"
 #import "RequestXMLBuilder.h"
 #import "HttpResult.h"
-#import "SQLBuilder.h"
 #import "HttpResult.h" 
-#import "Constant.h"
 
 #define NEED_ENCRYPT YES
 #define BOOL_RESULT_SUCCESS @"SUCCESS"
