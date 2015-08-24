@@ -156,7 +156,7 @@
     hud.margin = 10.f;
     hud.yOffset = 150.f;
     hud.removeFromSuperViewOnHide = YES;
-    [hud hide:YES afterDelay:1.5];
+    [hud hide:YES afterDelay:1.0];
 }
 
 +(void)showSuccess
@@ -171,7 +171,7 @@
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 37, 37)];
     imageView.image = [UIImage imageNamed:@"gou"];
     hud.customView = imageView;
-    [hud hide:YES afterDelay:1.5];
+    [hud hide:YES afterDelay:0.5];
 }
 
 ////显示加载提示
