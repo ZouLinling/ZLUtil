@@ -110,6 +110,9 @@
 
 	NSString* numberString = [NSString stringWithFormat:self.textFormat,self.value];
 	
+    if (self.value > 99) {
+        numberString = @"99+";
+    }
 	
     CGSize numberSize = [numberString sizeWithAttributes:@{ NSFontAttributeName : self.font }];
 		
@@ -263,6 +266,9 @@
 {
 	NSString* numberString = [NSString stringWithFormat:self.textFormat,self.value];
 	
+    if (self.value > 99) {
+        numberString = @"99+";
+    }
 	
 	CGSize numberSize = [numberString sizeWithAttributes:@{ NSFontAttributeName : self.font }];
 	
