@@ -29,8 +29,8 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.framework  = "CoreTelephony"
-  #s.frameworks = "CoreTelephony"
+  #s.framework  = "CoreTelephony"
+  s.frameworks = "CoreTelephony","libz.tbd"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
