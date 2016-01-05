@@ -37,6 +37,8 @@ s.license      = "MIT"
 	
   s.subspec 'JSONKit' do |spec|
     spec.requires_arc            = false
+  s.subspec 'ZLGTMBase64' do |spec|
+spec.requires_arc            = false
 
   s.requires_arc = true
 
