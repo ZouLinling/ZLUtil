@@ -29,8 +29,8 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  #s.framework  = "CoreTelephony"
-  s.frameworks = "CoreTelephony","libz.tbd"
+  s.framework  = "CoreTelephony"
+  #s.frameworks = "CoreTelephony"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
@@ -46,7 +46,7 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+  s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libz" }
   s.dependency 'MBProgressHUD', '~> 0.8'
 
 end
