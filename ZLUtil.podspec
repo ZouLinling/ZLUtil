@@ -10,7 +10,7 @@ s.license      = "MIT"
   s.source       = { :git => "https://github.com/ZouLinling/ZLUtil.git", :tag => "0.0.4" }
 
 
-  s.source_files  = "Util", "Category","CoreDataManager","JSONKit","Views","NetWork"
+  s.source_files  = "Util", "Category","CoreDataManager","Views","NetWork"
   #s.exclude_files = 
 
   # s.public_header_files = "Classes/**/*.h"
@@ -35,16 +35,16 @@ s.license      = "MIT"
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
 	
-  s.requires_arc = true
-  
   s.subspec 'JSONKit' do |spec|
     spec.requires_arc            = false
-    ss.source_files = 'JSONKit/*.{h,m}'
+    spec.source_files = 'JSONKit/*.{h,m}'
   end
   s.subspec 'ZLGTMBase64' do |spec|
     spec.requires_arc            = false
-    ss.source_files = 'Util/ZLGTMBase64.{h,m}'
+    spec.source_files = 'Base64/ZLGTMBase64.{h,m}'
   end
+
+  s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency 'MBProgressHUD', '~> 0.8'
