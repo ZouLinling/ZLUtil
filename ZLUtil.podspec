@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/ZouLinling/ZLUtil.git", :tag => s.version }
 
 
-  s.source_files  = "Util", "Category","CoreDataManager","Views","NetWork/XMLParser"
+  s.source_files  = "Util", "Category","CoreDataManager","Views"
   #s.exclude_files = 
 
   # s.public_header_files = "Classes/**/*.h"
@@ -42,6 +42,11 @@ Pod::Spec.new do |s|
   s.subspec 'ZLGTMBase64' do |spec|
     spec.requires_arc = false
     spec.source_files = 'Base64/*.{h,m}'
+  end
+
+  s.subspec 'GDataXMLNode' do |spec|
+    spec.requires_arc = false
+    spec.source_files = 'NetWork/XMLParser/*.{h,m}'
   end
 
   s.requires_arc = true
