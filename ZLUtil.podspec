@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
   s.framework  = "CoreTelephony"
   #s.frameworks = "CoreTelephony"
 
-  s.library   = "libz"
+  s.library   = "z"
   # s.libraries = "iconv", "xml2"
 	
   s.subspec 'JSONKit' do |spec|
