@@ -1,16 +1,16 @@
 Pod::Spec.new do |s|
   s.name         = "ZLUtil"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "ZLUtil provide common used function. For personal project use."
   s.homepage     = "https://github.com/ZouLinling/ZLUtil"
 
 s.license      = "MIT"  
   s.author             = { "ZouLinling" => "stampmi@163.com" }
   
-  s.source       = { :git => "https://github.com/ZouLinling/ZLUtil.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/ZouLinling/ZLUtil.git", :tag => "0.0.3" }
 
 
-  s.source_files  = "Util", "Category"
+  s.source_files  = "Util", "Category","CoreDataManager","JSONKit","Views","NetWork"
   #s.exclude_files = 
 
   # s.public_header_files = "Classes/**/*.h"
