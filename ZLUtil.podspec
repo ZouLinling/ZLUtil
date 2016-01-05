@@ -4,10 +4,10 @@ Pod::Spec.new do |s|
   s.summary      = "ZLUtil provide common used function. For personal project use."
   s.homepage     = "https://github.com/ZouLinling/ZLUtil"
 
-s.license      = "MIT"  
+  s.license      = "MIT"  
   s.author             = { "ZouLinling" => "stampmi@163.com" }
   
-  s.source       = { :git => "https://github.com/ZouLinling/ZLUtil.git", :tag => "0.0.4" }
+  s.source       = { :git => "https://github.com/ZouLinling/ZLUtil.git", :tag => s.version }
 
 
   s.source_files  = "Util", "Category","CoreDataManager","Views","NetWork"
@@ -36,12 +36,12 @@ s.license      = "MIT"
   # s.libraries = "iconv", "xml2"
 	
   s.subspec 'JSONKit' do |spec|
-    spec.requires_arc            = false
+    spec.requires_arc = false
     spec.source_files = 'JSONKit/*.{h,m}'
   end
   s.subspec 'ZLGTMBase64' do |spec|
-    spec.requires_arc            = false
-    spec.source_files = 'Base64/ZLGTMBase64.{h,m}'
+    spec.requires_arc = false
+    spec.source_files = 'Base64/*.{h,m}'
   end
 
   s.requires_arc = true

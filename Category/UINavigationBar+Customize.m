@@ -9,7 +9,6 @@
 #import "UINavigationBar+Customize.h"
 #import "UIImage+UIImageFromUIColor.h"
 #import "UIColor+UIColorFromHex.h"
-#import "Constant.h"
 
 @implementation UINavigationBar (Customize)
 
@@ -22,7 +21,7 @@
 //设置默认背景颜色
 -(void)setDefaultBackgroundColor
 {
-    [self setBackgroundColor:TAB_BG];
+    [self setBackgroundColor:0xD20000];
 }
 
 /**
