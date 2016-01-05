@@ -40,9 +40,11 @@ s.license      = "MIT"
   s.subspec 'JSONKit' do |spec|
     spec.requires_arc            = false
     ss.source_files = 'JSONKit/*.{h,m}'
+  end
   s.subspec 'ZLGTMBase64' do |spec|
     spec.requires_arc            = false
     ss.source_files = 'Util/ZLGTMBase64.{h,m}'
+  end
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency 'MBProgressHUD', '~> 0.8'
