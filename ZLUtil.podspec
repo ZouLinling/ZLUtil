@@ -32,8 +32,8 @@ Pod::Spec.new do |s|
   s.framework  = "CoreTelephony"
   #s.frameworks = "CoreTelephony"
 
-  s.library   = "z"
-  # s.libraries = "iconv", "xml2"
+  #s.library   = "z"
+  s.libraries = "z", "xml2"
 	
   s.subspec 'JSONKit' do |spec|
     spec.requires_arc = false
@@ -46,7 +46,7 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/zlib.h" }
+  #s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/zlib.h" }
   s.dependency 'MBProgressHUD', '~> 0.8'
 
 end
