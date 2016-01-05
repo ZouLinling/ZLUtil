@@ -34,7 +34,9 @@ s.license      = "MIT"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
-
+	
+  s.subspec 'JSONKit' do |spec|
+    spec.requires_arc            = false
 
   s.requires_arc = true
 
