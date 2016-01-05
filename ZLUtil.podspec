@@ -35,12 +35,14 @@ s.license      = "MIT"
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
 	
+  s.requires_arc = true
+  
   s.subspec 'JSONKit' do |spec|
     spec.requires_arc            = false
+    ss.source_files = 'JSONKit/*.{h,m}'
   s.subspec 'ZLGTMBase64' do |spec|
-spec.requires_arc            = false
-
-  s.requires_arc = true
+    spec.requires_arc            = false
+    ss.source_files = 'Util/ZLGTMBase64.{h,m}'
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency 'MBProgressHUD', '~> 0.8'
