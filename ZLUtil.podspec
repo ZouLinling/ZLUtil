@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/ZouLinling/ZLUtil.git", :tag => s.version }
 
 
-  s.source_files  = "Util", "Category","CoreDataManager","Views","Views/MKNumberBadge"
+  s.source_files  = "Util", "Category","CoreDataManager","Views","Views/MKNumberBadge","AES"
   #s.exclude_files = 
 
   # s.public_header_files = "Classes/**/*.h"
