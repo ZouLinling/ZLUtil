@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
   s.framework  = "CoreTelephony"
   #s.frameworks = "CoreTelephony"
 
-  # s.library   = "iconv"
+  s.library   = "libz"
   # s.libraries = "iconv", "xml2"
 	
   s.subspec 'JSONKit' do |spec|
@@ -46,7 +46,7 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libz" }
+  #s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency 'MBProgressHUD', '~> 0.8'
 
 end
