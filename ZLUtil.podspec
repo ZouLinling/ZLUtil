@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ZLUtil"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "ZLUtil provide common used function. For personal project use."
   s.homepage     = "https://github.com/ZouLinling/ZLUtil"
 
