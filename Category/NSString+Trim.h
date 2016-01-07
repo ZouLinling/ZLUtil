@@ -10,7 +10,6 @@
 
 @interface NSString (Trim)
 
-
 /**
  *  去除首尾空格
  *

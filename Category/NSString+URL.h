@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (URL)
-
+/**
+ *  将URL中的非拉丁字符转换成全拉丁字符
+ *
+ *  @return
+ */
 - (NSString *)URLEncodedString;
 
 @end

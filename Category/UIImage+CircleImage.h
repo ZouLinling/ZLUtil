@@ -11,9 +11,12 @@
 @interface UIImage (CircleImage)
 
 /**
- * 制造圆形图片
- *  @para inset 会根据原始图的最大半径扣除inset值来画园
- */
+*  制造圆形图片
+*
+*  @param inset 会根据原始图的最大半径扣除inset值来画园
+*
+*  @return
+*/
 -(UIImage*) circleImageWithInset:(CGFloat)inset;
 
 @end

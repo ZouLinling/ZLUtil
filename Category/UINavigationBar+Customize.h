@@ -11,10 +11,10 @@
 @interface UINavigationBar (Customize)
 
 /**
- *  设置背景颜色(16进制颜色)
- *
- *  @param color 16进制颜色，例如0xAABBCC
- */
+*  设置背景颜色(16进制颜色)
+*
+*  @param color 16进制颜色，例如0xAABBCC
+*/
 -(void)setBackgroundColor:(NSInteger)color;
 
 /**
