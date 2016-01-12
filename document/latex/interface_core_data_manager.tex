@@ -1,0 +1,214 @@
+\hypertarget{interface_core_data_manager}{\section{Core\+Data\+Manager Class Reference}
+\label{interface_core_data_manager}\index{Core\+Data\+Manager@{Core\+Data\+Manager}}
+}
+Inheritance diagram for Core\+Data\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_core_data_manager}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(id) -\/ \hyperlink{interface_core_data_manager_ac99be2a18e096a2612cc9eafa5f88b36}{init\+With\+File\+Name\+:sqlite\+File\+Name\+:}
+\item 
+(N\+S\+Managed\+Object $\ast$) -\/ \hyperlink{interface_core_data_manager_a411a27a6c1fcaea2e894ffc9713fcb14}{create\+Managed\+Object\+:}
+\item 
+(B\+O\+O\+L) -\/ \hyperlink{interface_core_data_manager_adee944022fd4c8d45c33fe6b04b4c82f}{delete\+Managed\+Object\+:entity\+:}
+\item 
+(void) -\/ \hyperlink{interface_core_data_manager_a16e04f79be0510697bf6e9e0575dc33e}{delete\+All\+Objects\+:}
+\item 
+(N\+S\+Array $\ast$) -\/ \hyperlink{interface_core_data_manager_ac3769e057a5db88cdfdc71abc5f1f9ca}{fetch\+Managed\+Objects\+By\+Predicate\+:entity\+:sort\+Descriptors\+:}
+\item 
+(B\+O\+O\+L) -\/ \hyperlink{interface_core_data_manager_a0d4599a7671866520395ee195e2268c8}{save\+Context\+:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(\hyperlink{interface_core_data_manager}{Core\+Data\+Manager} $\ast$) + \hyperlink{interface_core_data_manager_a72a3b0a316fe7508d02b8f640dc7884b}{get\+Instance}
+\item 
+(N\+S\+Array $\ast$) + \hyperlink{interface_core_data_manager_a4f6f5e1997e472b1a9a5b50e9410713a}{query\+:predicate\+:}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{interface_core_data_manager_ae8e3bc5409bcd4b4b16c0db274b49676}{N\+S\+Managed\+Object\+Model $\ast$ {\bfseries managed\+Object\+Model}}\label{interface_core_data_manager_ae8e3bc5409bcd4b4b16c0db274b49676}
+
+\item 
+\hypertarget{interface_core_data_manager_a04f78913860c95a80e270c6390a42211}{N\+S\+Managed\+Object\+Context $\ast$ {\bfseries managed\+Object\+Context}}\label{interface_core_data_manager_a04f78913860c95a80e270c6390a42211}
+
+\item 
+\hypertarget{interface_core_data_manager_aeb95a5451a0eb9ae52c7a94c6c01d259}{N\+S\+Persistent\+Store\+Coordinator $\ast$ {\bfseries persistent\+Store\+Coordinator}}\label{interface_core_data_manager_aeb95a5451a0eb9ae52c7a94c6c01d259}
+
+\item 
+\hypertarget{interface_core_data_manager_a2a2c49db7ffcf792775a63cf2fc9cba2}{N\+S\+String $\ast$ {\bfseries model\+File\+Name}}\label{interface_core_data_manager_a2a2c49db7ffcf792775a63cf2fc9cba2}
+
+\item 
+\hypertarget{interface_core_data_manager_ae807ce3cd077ce33dccd428eaf708721}{N\+S\+String $\ast$ {\bfseries sqlite\+File\+Name}}\label{interface_core_data_manager_ae807ce3cd077ce33dccd428eaf708721}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_core_data_manager_a411a27a6c1fcaea2e894ffc9713fcb14}{\index{Core\+Data\+Manager@{Core\+Data\+Manager}!create\+Managed\+Object\+:@{create\+Managed\+Object\+:}}
+\index{create\+Managed\+Object\+:@{create\+Managed\+Object\+:}!Core\+Data\+Manager@{Core\+Data\+Manager}}
+\subsubsection[{create\+Managed\+Object\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+Managed\+Object $\ast$) create\+Managed\+Object\+: 
+\begin{DoxyParamCaption}
+\item[{(Class)}]{entity\+Class}
+\end{DoxyParamCaption}
+}}\label{interface_core_data_manager_a411a27a6c1fcaea2e894ffc9713fcb14}
+获取\+N\+S\+Managed\+Object实例
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+Class} & 创建的实体对象\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{interface_core_data_manager_a16e04f79be0510697bf6e9e0575dc33e}{\index{Core\+Data\+Manager@{Core\+Data\+Manager}!delete\+All\+Objects\+:@{delete\+All\+Objects\+:}}
+\index{delete\+All\+Objects\+:@{delete\+All\+Objects\+:}!Core\+Data\+Manager@{Core\+Data\+Manager}}
+\subsubsection[{delete\+All\+Objects\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) delete\+All\+Objects\+: 
+\begin{DoxyParamCaption}
+\item[{(Class)}]{entity\+Class}
+\end{DoxyParamCaption}
+}}\label{interface_core_data_manager_a16e04f79be0510697bf6e9e0575dc33e}
+清空指定的表
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+Class} & 目标实体对象 \\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_core_data_manager_adee944022fd4c8d45c33fe6b04b4c82f}{\index{Core\+Data\+Manager@{Core\+Data\+Manager}!delete\+Managed\+Object\+:entity\+:@{delete\+Managed\+Object\+:entity\+:}}
+\index{delete\+Managed\+Object\+:entity\+:@{delete\+Managed\+Object\+:entity\+:}!Core\+Data\+Manager@{Core\+Data\+Manager}}
+\subsubsection[{delete\+Managed\+Object\+:entity\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\+O\+O\+L) delete\+Managed\+Object\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+Managed\+Object $\ast$)}]{object}
+\item[{entity:(Class)}]{entity\+Class}
+\end{DoxyParamCaption}
+}}\label{interface_core_data_manager_adee944022fd4c8d45c33fe6b04b4c82f}
+删除指定的实例（数据库中一条记录）
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & 需要删除的\+N\+S\+Managed\+Object实例 \\
+\hline
+{\em entity\+Class} & 目标实体对象\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{interface_core_data_manager_ac3769e057a5db88cdfdc71abc5f1f9ca}{\index{Core\+Data\+Manager@{Core\+Data\+Manager}!fetch\+Managed\+Objects\+By\+Predicate\+:entity\+:sort\+Descriptors\+:@{fetch\+Managed\+Objects\+By\+Predicate\+:entity\+:sort\+Descriptors\+:}}
+\index{fetch\+Managed\+Objects\+By\+Predicate\+:entity\+:sort\+Descriptors\+:@{fetch\+Managed\+Objects\+By\+Predicate\+:entity\+:sort\+Descriptors\+:}!Core\+Data\+Manager@{Core\+Data\+Manager}}
+\subsubsection[{fetch\+Managed\+Objects\+By\+Predicate\+:entity\+:sort\+Descriptors\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\+S\+Array $\ast$) fetch\+Managed\+Objects\+By\+Predicate\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+Predicate $\ast$)}]{predicate}
+\item[{entity:(Class)}]{entity\+Class}
+\item[{sortDescriptors:(N\+S\+Array $\ast$)}]{sort\+Descriptors}
+\end{DoxyParamCaption}
+}}\label{interface_core_data_manager_ac3769e057a5db88cdfdc71abc5f1f9ca}
+根据指定的查询条件查询数据,可以用来确认数据库中是否有相关实例
+
+
+\begin{DoxyParams}{Parameters}
+{\em predicate} & 查询条件 \\
+\hline
+{\em entity\+Class} & 目标实体对象 \\
+\hline
+{\em sort\+Descriptors} & 对象排序数组\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{interface_core_data_manager_a72a3b0a316fe7508d02b8f640dc7884b}{\index{Core\+Data\+Manager@{Core\+Data\+Manager}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Core\+Data\+Manager@{Core\+Data\+Manager}}
+\subsubsection[{get\+Instance}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf Core\+Data\+Manager} $\ast$) get\+Instance 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{interface_core_data_manager_a72a3b0a316fe7508d02b8f640dc7884b}
+获取\+Core\+Data\+Manager实例
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+获取\+Core\+Data\+Manager实例 注意：如果datamodel的文件名不是\+Model的，需要为其设置，否则会强制关闭 默认的数据库文件的名字是\+Default.\+sqlite，如果需要更改，也可以进行修改，建议在\+App\+Delegate的 did\+Finish\+Launching\+With\+Options方法中进行设置，例如： \hyperlink{interface_core_data_manager}{Core\+Data\+Manager} $\ast$core\+Data\+Manager = \mbox{[}\hyperlink{interface_core_data_manager}{Core\+Data\+Manager} get\+Instance\mbox{]}; core\+Data\+Manager.\+model\+File\+Name = "My\+Model\char`\"{};
+core\+Data\+Manager.\+sqlite\+File\+Name = @\char`\"{}My\+Data\+Base.\+sqlite";
+
+从数据库中查询 \hyperlink{interface_core_data_manager}{Core\+Data\+Manager} $\ast$core\+Data\+Manager = \mbox{[}\hyperlink{interface_core_data_manager}{Core\+Data\+Manager} get\+Instance\mbox{]}; N\+S\+Predicate $\ast$predicate = \mbox{[}N\+S\+Predicate predicate\+With\+Format\+:"name==\%",name\mbox{]}; N\+S\+Mutable\+Array $\ast$records = \mbox{[}\mbox{[}core\+Data\+Manager fetch\+Managed\+Objects\+By\+Predicate\+:predicate entity\+:User.\+class sort\+Descriptors\+:nil\mbox{]} mutable\+Copy\mbox{]};
+
+插入新值到数据库 \hyperlink{interface_core_data_manager}{Core\+Data\+Manager} {\itshape core\+Data\+Manager = \mbox{[}\hyperlink{interface_core_data_manager}{Core\+Data\+Manager} get\+Instance\mbox{]}; User $\ast$user = nil; user = (User})\mbox{[}N\+S\+Entity\+Description insert\+New\+Object\+For\+Entity\+For\+Name\+:\mbox{[}User.\+class class\+Name\mbox{]} in\+Managed\+Object\+Context\+:core\+Data\+Manager.\+managed\+Object\+Context\mbox{]}; user.\+name = name; user.\+password = password; user.\+login\+Times = 1; user.\+last\+Login\+Time = \mbox{[}\hyperlink{interface_util}{Util} current\+Time\+String\mbox{]}; user.\+user\+I\+D = "1234"; \mbox{[}core\+Data\+Manager save\+Context\+:User.\+class\mbox{]};
+
+删除单条记录，需要先查询，这里是查询所有记录 N\+S\+Fetch\+Request $\ast$fetch\+Request = \mbox{[}\mbox{[}N\+S\+Fetch\+Request alloc\mbox{]} init\mbox{]}; N\+S\+Entity\+Description $\ast$entity = \mbox{[}N\+S\+Entity\+Description entity\+For\+Name\+:\mbox{[}entity\+Class class\+Name\mbox{]} in\+Managed\+Object\+Context\+:\mbox{[}self managed\+Object\+Context\mbox{]}\mbox{]}; \mbox{[}fetch\+Request set\+Entity\+:entity\mbox{]};
+
+N\+S\+Error $\ast$error; N\+S\+Array $\ast$items = \mbox{[}\mbox{[}self managed\+Object\+Context\mbox{]} execute\+Fetch\+Request\+:fetch\+Request error\+:\&error\mbox{]}; for (N\+S\+Managed\+Object $\ast$managed\+Object in items) \{ \mbox{[}self delete\+Managed\+Object\+:managed\+Object entity\+:entity\+Class\mbox{]}; \}
+
+删除整个表中内容 \mbox{[}\mbox{[}\hyperlink{interface_core_data_manager}{Core\+Data\+Manager} get\+Instance\mbox{]} delete\+All\+Objects\+:\mbox{[}Search class\mbox{]}\mbox{]};
+
+更新某条记录 先查询出来，再删除，再新增 \hypertarget{interface_core_data_manager_ac99be2a18e096a2612cc9eafa5f88b36}{\index{Core\+Data\+Manager@{Core\+Data\+Manager}!init\+With\+File\+Name\+:sqlite\+File\+Name\+:@{init\+With\+File\+Name\+:sqlite\+File\+Name\+:}}
+\index{init\+With\+File\+Name\+:sqlite\+File\+Name\+:@{init\+With\+File\+Name\+:sqlite\+File\+Name\+:}!Core\+Data\+Manager@{Core\+Data\+Manager}}
+\subsubsection[{init\+With\+File\+Name\+:sqlite\+File\+Name\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (id) init\+With\+File\+Name\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String$\ast$)}]{model\+File\+Name}
+\item[{sqliteFileName:(N\+S\+String$\ast$)}]{sqlite\+File\+Name}
+\end{DoxyParamCaption}
+}}\label{interface_core_data_manager_ac99be2a18e096a2612cc9eafa5f88b36}
+构造函数
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+File\+Name} & 模型文件名称 \\
+\hline
+{\em sqlite\+File\+Name} & 数据库文件名称\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{interface_core_data_manager_a4f6f5e1997e472b1a9a5b50e9410713a}{\index{Core\+Data\+Manager@{Core\+Data\+Manager}!query\+:predicate\+:@{query\+:predicate\+:}}
+\index{query\+:predicate\+:@{query\+:predicate\+:}!Core\+Data\+Manager@{Core\+Data\+Manager}}
+\subsubsection[{query\+:predicate\+:}]{\setlength{\rightskip}{0pt plus 5cm}+ (N\+S\+Array $\ast$) query\+: 
+\begin{DoxyParamCaption}
+\item[{(N\+S\+String$\ast$)}]{entity\+Nmae}
+\item[{predicate:(N\+S\+Predicate $\ast$)}]{predicate}
+\end{DoxyParamCaption}
+}}\label{interface_core_data_manager_a4f6f5e1997e472b1a9a5b50e9410713a}
+单表查询
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+Nmae} & 表名 \\
+\hline
+{\em predicate} & 查询条件\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+查询结果 
+\end{DoxyReturn}
+\hypertarget{interface_core_data_manager_a0d4599a7671866520395ee195e2268c8}{\index{Core\+Data\+Manager@{Core\+Data\+Manager}!save\+Context\+:@{save\+Context\+:}}
+\index{save\+Context\+:@{save\+Context\+:}!Core\+Data\+Manager@{Core\+Data\+Manager}}
+\subsubsection[{save\+Context\+:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (B\+O\+O\+L) save\+Context\+: 
+\begin{DoxyParamCaption}
+\item[{(Class)}]{entity\+Class}
+\end{DoxyParamCaption}
+}}\label{interface_core_data_manager_a0d4599a7671866520395ee195e2268c8}
+保存数据库
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+Class} & 目标实体对象\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Core\+Data\+Manager/Core\+Data\+Manager.\+h\item 
+Core\+Data\+Manager/Core\+Data\+Manager.\+m\end{DoxyCompactItemize}
