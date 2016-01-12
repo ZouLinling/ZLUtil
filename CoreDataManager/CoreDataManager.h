@@ -32,6 +32,16 @@
 + (CoreDataManager*)getInstance;
 
 /**
+ *  构造函数
+ *
+ *  @param modelFileName  模型文件名称
+ *  @param sqliteFileName 数据库文件名称
+ *
+ *  @return
+ */
+-(id)initWithFileName:(NSString*)modelFileName sqliteFileName:(NSString*)sqliteFileName;
+
+/**
  *  获取NSManagedObject实例
  *
  *  @param entityClass 创建的实体对象
@@ -78,4 +88,15 @@
  *  @return
  */
 -(BOOL) saveContext:(Class)entityClass;
+
+/**
+ *  单表查询
+ *
+ *  @param entityNmae 表名
+ *  @param predicate  查询条件
+ *
+ *  @return 查询结果
+ */
++(NSArray*)query:(NSString*)entityNmae predicate:(NSPredicate *)predicate;
+
 @end

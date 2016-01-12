@@ -70,6 +70,25 @@
     return instance;
 }
 
+//构造函数
+-(id)initWithFileName:(NSString *)modelFileName sqliteFileName:(NSString *)sqliteFileName
+{
+    self = [super init];
+    if (self) {
+        if ([modelFileName isEqualToString:@""]||modelFileName == nil) {
+            abort();
+        }else{
+            [CoreDataManager getInstance].modelFileName = modelFileName;
+        }
+        if ([sqliteFileName isEqualToString:@""]||sqliteFileName == nil) {
+            abort();
+        }else{
+            [CoreDataManager getInstance].sqliteFileName = sqliteFileName;
+        }
+    }
+    return self;
+}
+
 //托管对象
 -(NSManagedObjectModel *)managedObjectModel
 {
@@ -187,6 +206,17 @@
         return NO;
     }
     return YES;
+}
+
+//单表查询
++(NSArray*)query:(NSString*)entityName predicate:(NSPredicate *)predicate
+{
+    NSEntityDescription *firstEntityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:[CoreDataManager getInstance].managedObjectContext];
+    NSFetchRequest *firstRequest = [[NSFetchRequest alloc]init];
+    [firstRequest setEntity:firstEntityDescription];
+    [firstRequest setPredicate:predicate];
+    NSArray *firstResult = [[CoreDataManager getInstance].managedObjectContext executeFetchRequest:firstRequest error:nil];
+    return firstResult;
 }
 
 @end
