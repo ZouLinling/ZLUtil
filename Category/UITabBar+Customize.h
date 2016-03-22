@@ -10,6 +10,6 @@
 
 @interface UITabBar (Customize)
 
--(void)setTabBarItemTitle:(NSString*)title image:(NSString*)imageName parentViewController:(UIViewController*) parent;
+-(void)setTabBarItemTitle:(NSString*)title image:(NSString*)imageName parentViewController:(UIViewController*) parent tintColor:(NSInteger)tintColor selectedTintColor:(NSInteger)selectedTintColor backgroundImageColor:(NSInteger)backgroundImageColor normalTextColor:(NSInteger)normalTextColor selectedTextColor:(NSInteger)selectedTextColor;
 
 @end
