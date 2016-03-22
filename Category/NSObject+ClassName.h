@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface NSObject (ClassName)
+/**
+ *  将对象类名称转换成字符串
+ *
+ *  @return
+ */
 + (NSString *)className;
 @end

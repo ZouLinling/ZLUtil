@@ -18,7 +18,13 @@
  *  @return
  */
 -(NSString*)AES256Encrypt:(NSString*)key;
-
+/**
+ *  AES 256解密
+ *
+ *  @param key 32位的key值，注意key值必须是32位，否则跨平台使用时会有问题
+ *
+ *  @return
+ */
 -(NSString*)AES256Decrypt:(NSString*)key;
 
 @end

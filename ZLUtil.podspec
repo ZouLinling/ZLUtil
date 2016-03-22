@@ -1,16 +1,16 @@
 Pod::Spec.new do |s|
   s.name         = "ZLUtil"
-  s.version      = "0.0.2"
+  s.version      = "0.0.5"
   s.summary      = "ZLUtil provide common used function. For personal project use."
   s.homepage     = "https://github.com/ZouLinling/ZLUtil"
 
-s.license      = "MIT"  
+  s.license      = "MIT"  
   s.author             = { "ZouLinling" => "stampmi@163.com" }
   
-  s.source       = { :git => "https://github.com/ZouLinling/ZLUtil.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/ZouLinling/ZLUtil.git", :tag => s.version }
 
 
-  s.source_files  = "Util", "Category"
+  s.source_files  = "Util", "Category","CoreDataManager","Views","Views/MKNumberBadge","AES"
   #s.exclude_files = 
 
   # s.public_header_files = "Classes/**/*.h"
@@ -32,13 +32,26 @@ s.license      = "MIT"
   s.framework  = "CoreTelephony"
   #s.frameworks = "CoreTelephony"
 
-  # s.library   = "iconv"
-  # s.libraries = "iconv", "xml2"
+  #s.library   = "z"
+  s.libraries = "z", "xml2"
+	
+  s.subspec 'JSONKit' do |spec|
+    spec.requires_arc = false
+    spec.source_files = 'JSONKit/*.{h,m}'
+  end
+  s.subspec 'ZLGTMBase64' do |spec|
+    spec.requires_arc = false
+    spec.source_files = 'Base64/*.{h,m}'
+  end
 
+  s.subspec 'GDataXMLNode' do |spec|
+    spec.requires_arc = false
+    spec.source_files = 'NetWork/XMLParser/*.{h,m}'
+  end
 
   s.requires_arc = true
 
-  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+  s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   s.dependency 'MBProgressHUD', '~> 0.8'
 
 end

@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDictionary (Dictionary2JSON)
-
+/**
+ *  字典转换成JSON
+ *
+ *  @param targetDictionary 待转换目标字典
+ *
+ *  @return
+ */
 -(NSString*)dictionary2JSON:(NSDictionary*)targetDictionary;
 @end

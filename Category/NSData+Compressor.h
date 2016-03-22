@@ -9,9 +9,18 @@
 #import <Foundation/Foundation.h>
 
 @interface NSData (Compressor)
-
+/**
+ *  解压缩，可以解压zip与gzip压缩过的字符串
+ *
+ *  @return
+ */
 -(NSData *)uncompressZippedData;
 
+/**
+ *  压缩成gzip格式
+ *
+ *  @return
+ */
 -(NSData*) gzipData;
 
 @end
