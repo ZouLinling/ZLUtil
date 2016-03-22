@@ -10,8 +10,6 @@
 
 @interface UITabBar (Customize)
 
-<<<<<<< HEAD
-=======
 /**
  *  设置顶部tab的名称和图片，图片必须为30*30（iPhone4）和 60*60（retina屏幕）
  *
@@ -24,7 +22,6 @@
  *  @param normalTextColor      普通状态下的tabBarItem文字颜色
  *  @param selectedTextColor    选中状态下的tabBarItem文字颜色
  */
->>>>>>> 793e75f65e52a6fd5ae2e28dd0bf5d722d2c1776
 -(void)setTabBarItemTitle:(NSString*)title image:(NSString*)imageName parentViewController:(UIViewController*) parent tintColor:(NSInteger)tintColor selectedTintColor:(NSInteger)selectedTintColor backgroundImageColor:(NSInteger)backgroundImageColor normalTextColor:(NSInteger)normalTextColor selectedTextColor:(NSInteger)selectedTextColor;
 
 @end
