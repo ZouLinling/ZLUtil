@@ -20,3 +20,5 @@ typedef void (^HttpResultBlock)(HttpResult* result);
 typedef void (^BoolResult)(BOOL result);
 
 typedef void (^DictionaryBlock)(NSDictionary *result);
+
+typedef void (^CompleteActionBlock)();
